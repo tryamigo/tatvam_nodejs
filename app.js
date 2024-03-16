@@ -5,11 +5,18 @@ const mysql = require('mysql2');
 const app = express();
 
 // Create MySQL connection
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'Kanishka@38',
+//     database: 'bse'
+// });
+
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Kanishka@38',
-    database: 'bse'
+    host: '64.227.189.233',
+    user: 'bse',
+    password: '2009',
+    database: 'tatvam'
 });
 
 // Connect to MySQL
