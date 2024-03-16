@@ -1,4 +1,3 @@
-// Import required modules
 const express = require('express');
 const mysql = require('mysql2');
 
@@ -52,12 +51,10 @@ connection.connect((err) => {
     // Fetch table headers from existing tables and insert into table_headers table
     connection.query(`
         INSERT INTO table_headers (table_name, headers)
-SELECT DISTINCT table_name, GROUP_CONCAT(column_name) 
-FROM information_schema.columns 
-WHERE table_schema = 'bse'
-AND table_name NOT IN (SELECT table_name FROM table_headers)
-GROUP BY table_name;
-
+        SELECT table_name, GROUP_CONCAT(column_name) 
+        FROM information_schema.columns 
+        WHERE table_schema = 'bse'
+        GROUP BY table_name;
     `, (err, result) => {
         if (err) {
             console.error('Error fetching and inserting table headers:', err);
@@ -68,7 +65,7 @@ GROUP BY table_name;
 });
 
 // Define route to fetch and display data
-app.get('/hci', (req, res) => {
+app.get('/import', (req, res) => {
     // Fetch table headers from MySQL for the 'hci' table
     connection.query("SELECT headers FROM table_headers WHERE table_name = 'hci'", (err, headerResults) => {
         if (err) {
@@ -138,34 +135,15 @@ app.get('/hci', (req, res) => {
                 // Encode HTML content into Base64
                 const base64String = Buffer.from(tableHtml).toString('base64');
 
-                if (dataResults.length > 0) {
-                    // Update existing entry
-                    const updateHciBase64Query = `
-                        UPDATE hci_base64
-                        SET base64_data = ?
-                        WHERE id = 0;
-                    `;
-                    connection.query(updateHciBase64Query, [base64String], (err, result) => {
-                        if (err) {
-                            console.error('Error updating hci_base64 table:', err);
-                            return;
-                        }
-                        console.log('Data updated in hci_base64 table.');
-                    });
-                } else {
-                    // Insert new entry
-                    const insertHciBase64Query = `
-                        INSERT INTO hci_base64 (id, base64_data)
-                        VALUES (0, ?);
-                    `;
-                    connection.query(insertHciBase64Query, [base64String], (err, result) => {
-                        if (err) {
-                            console.error('Error inserting new entry into hci_base64 table:', err);
-                            return;
-                        }
-                        console.log('New entry inserted into hci_base64 table.');
-                    });
-                }
+                // Save Base64 string to MySQL database
+                const sql = 'INSERT INTO hci_base64 (base64_data) VALUES (?)';
+                connection.query(sql, [base64String], (err, result) => {
+                    if (err) {
+                        console.error('Error saving data to MySQL: ' + err.stack);
+                        return;
+                    }
+                    console.log('Data saved to MySQL database.');
+                });
 
                 // Send HTML response to client
                 res.send(tableHtml);
