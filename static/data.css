@@ -1,0 +1,150 @@
+/* INSERT INTO css_templates (name, css_content) VALUES ('data_template', ' @import url(''https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap''); */
+                            body {
+                                padding: 0;
+                                margin: 0;
+                            }
+                            .no-scrollbar::-webkit-scrollbar {
+                                display: none;
+                            }
+                            .containerhead {
+                                background: white;
+                                border-bottom: 1px solid #E5E7EB;
+                                width: 100%;
+                                height: 126px;
+                                margin-top: 16px;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                align-items: flex-start;
+                                gap: 16px;
+                                display: inline-flex;
+                            }
+                            .cardhead {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: flex-start;
+                                padding: 16px 16px 16px 16px;
+                            }
+                            .headcont {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: flex-start;
+                                gap: 8px;
+                                width: 100%;
+                                padding: 12px 0px 0px 16px;
+                                height: 40px;
+                                overflow-x: auto;
+                            }
+                            @media screen and (min-width: 500px) {
+                                .containerhead {
+                                    display: flex;
+                                    height: 60px;
+                                    margin-top: 0px;
+                                    width: auto;
+                                    padding-left: 50px;
+                                    padding-right: 50px;
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+                                    gap: 10px;
+                                    background: var(--Grayscale-White, #FFF);
+                                }
+                                .headcont,
+                                .cardhead {
+                                    padding: 0px 0px 0px 0px;
+                                    height: 100%;
+                                    align-items: center;
+                                    justify-items: center;
+                                    display: flex;
+                                    gap: 40px;
+                                    width: auto;
+                                }
+                            }
+                            .headannouncement,
+                            .headcompany,
+                            .headnews,
+                            .headmutule-funds {
+                                height: 100%;
+                                text-decoration: none;
+                                display: flex;
+                                justify-items: center;
+                                align-items: center;
+                                padding-left: 12px;
+                                padding-right: 12px;
+                                color: #777580;
+                                font-size: 16px;
+                                font-family: Lato;
+                                font-weight: 400;
+                                line-height: 20px;
+                                word-wrap: break-word;
+                                text-decoration: none;
+                            }
+                            .headdata {
+                                border-bottom: 0px solid #6669EF;
+                                color: #6669EF;
+                                height: 100%;
+                                text-decoration: none;
+                                display: flex;
+                                justify-items: center;
+                                align-items: center;
+                                padding-left: 12px;
+                                padding-right: 12px;
+                                font-size: 16px;
+                                font-family: Lato;
+                                font-weight: 400;
+                                line-height: 20px;
+                                word-wrap: break-word
+                            }
+                            table {
+                                border: #777580;
+                                border-top-right-radius: 30px;
+                                border-top-left-radius: 30px;
+                            }
+                            th,
+                            td {
+                                border: 1px #DDDDE0 solid;
+                                margin: 24px, 24px, 24px, 24px;
+                                text-align: left;
+                                padding: 8px;
+                                width: 154px;
+                            }
+                            th {
+                                background-color: #F2F2F2;
+                                color: black;
+                                width: 154px;
+                            }
+                            body {
+                                padding: 24px, 24px, 24px, 24px;
+                                font-family: Lato;
+                                font-weight: 400;
+                                line-height: 20px;
+                                word-wrap: break-word;
+                                text-decoration: none;
+                                margin: 24px, 24px, 24px, 24px;
+                                font-size: 16px;
+                                font-family: Lato;
+                                font-weight: 400;
+                                line-height: 20px;
+                                word-wrap: break-word;
+                                text-decoration: none;
+                            }
+                            .main-div {
+                                width: calc(100% - 100px);
+                                padding: 24px 50px 24px 50px;
+                            }
+                            table {
+                                border-collapse: collapse;
+                                margin-top: 16px;
+                                margin-bottom: 24px;
+                                margin-left: 50px;
+                            }
+                            div.title {
+                                font-size: 16px;
+                                font-weight: bold;
+                                line-height: 24px;
+                                word-wrap: break-word;
+                                text-decoration: none;
+                                color: black;
+                                font-family: Lato;
+                                margin-top: 16px;
+                                margin-left: 50px;
+                            }
