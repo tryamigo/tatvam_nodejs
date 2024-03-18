@@ -60,7 +60,7 @@ function fetchAndInsertTableHeaders() {
         INSERT INTO table_headers (table_name, headers)
         SELECT DISTINCT table_name, GROUP_CONCAT(column_name) 
         FROM information_schema.columns 
-        WHERE table_schema = 'bse'
+        WHERE table_schema = 'tatvam'
         AND table_name NOT IN (SELECT table_name FROM table_headers)
         GROUP BY table_name;
     `, (err, result) => {
