@@ -215,6 +215,7 @@ app.get('/', (req, res) => {
             <li><a href="/manufacturing_data"> manufacturing_data</a></li>
             <li><a href="/per_capital">per_capital</a></li>
             <li><a href="/remitance">remitance</a></li>
+            <li><a href="/repo_rate">repo_rate</a></li>
             <li><a href="/startup">startup</a></li>
             <li><a href="/tourism">tourism</a></li>
             <li><a href="/unemployment">unemployment</a></li>
