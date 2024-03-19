@@ -230,6 +230,7 @@ app.get('/', (req, res) => {
             <li><a href="/Scheme_Ratios">Scheme_Ratios</a></li>
             <li><a href="/AMFIMaster">AMFIMaster</a></li>
             <li><a href="/FUND_AMC">FUND_AMC</a></li>
+            <li><a href="/SCHEME_MASTER">SCHEME_MASTER</a></li>
         </ol>
     `;
     res.send(tableUrls);
