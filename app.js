@@ -220,6 +220,16 @@ app.get('/', (req, res) => {
             <li><a href="/tourism">tourism</a></li>
             <li><a href="/unemployment">unemployment</a></li>
             <li><a href="/upi_top_bank_data">upi_top_bank_data</a></li>
+            <li><a href="/SchemeProfileExpRatio">SchemeProfileExpRatio</a></li>
+            <li><a href="/DailyNAV">DailyNAV</a></li>
+            <li><a href="/NewFundOffer">NewFundOffer</a></li>
+            <li><a href="/AvgMaturityData">AvgMaturityData</a></li>
+            <li><a href="/FundWiseAUMMonthly">FundWiseAUMMonthly</a></li>
+            <li><a href="/SchemeAUMHist">SchemeAUMHist</a></li>
+            <li><a href="/MFActivities">MFActivities</a></li>
+            <li><a href="/Scheme_Ratios">Scheme_Ratios</a></li>
+            <li><a href="/AMFIMaster">AMFIMaster</a></li>
+            <li><a href="/FUND_AMC">FUND_AMC</a></li>
         </ol>
     `;
     res.send(tableUrls);
